@@ -501,6 +501,7 @@ func run(_ []string) error {
 			})
 
 			r.Use(cors.Handler)
+			r.Use(CorsVaryOriginHandler)
 			logger.Infof("CORS enabled with allowed origins: %v", cfg.Cors.AllowedOrigins)
 		}
 
